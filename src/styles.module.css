@@ -1,0 +1,16 @@
+html,
+body {
+  margin: 0;
+  height: 100vh;
+  --cred: #ca3838;
+  --cgreen: #38ca9e;
+}
+
+* {
+  font-family: "Bellota Text";
+}
+
+body > div {
+  position: relative;
+  overflow-x: hidden;
+}

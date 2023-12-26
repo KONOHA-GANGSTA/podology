@@ -1,0 +1,55 @@
+.root {
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 10px;
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  height: 7px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.pile {
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--cgreen);
+}
+
+.cross {
+  position: relative;
+  background-color: white;
+}
+
+.crossBar1,
+.crossBar2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: var(--cgreen) !important;
+}
+
+.crossBar1 {
+  transform: translate(-50%, -50%) rotate(+45deg);
+}
+.crossBar2 {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+@media screen and (max-width: 650px) {
+  .root {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+  }
+
+  .bar {
+    height: 5px;
+  }
+}

@@ -1,0 +1,17 @@
+.root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer {
+  background-color: var(--cgreen);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: white;
+  width: 80%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}

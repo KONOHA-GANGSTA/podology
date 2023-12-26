@@ -1,0 +1,22 @@
+.title {
+  font-weight: bold;
+  font-size: 64px;
+  display: flex;
+  justify-content: center;
+}
+
+.title > span {
+  color: var(--cgreen);
+  font-family: "Bellota Text";
+}
+
+.title > span > span {
+  color: var(--cred);
+  font-family: "Comfortaa";
+}
+
+@media screen and (max-width: 650px) {
+  .title {
+    font-size: 40px;
+  }
+}
