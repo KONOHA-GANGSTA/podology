@@ -4,6 +4,7 @@ body {
   height: 100vh;
   --cred: #ca3838;
   --cgreen: #38ca9e;
+  background-color: #f5f5f5;
 }
 
 * {
@@ -13,4 +14,8 @@ body {
 body > div {
   position: relative;
   overflow-x: hidden;
+}
+
+h1 {
+  font-family: "Comfortaa";
 }

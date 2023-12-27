@@ -1,5 +1,5 @@
 import { createPortal } from "react-dom";
-import { MobileNavigationHeader } from "../../MobileNavigationHeader/component";
+import { MobileNavigationHeader } from "../MobileNavigationHeader/component";
 import { NavigationTab } from "../NavigationTab/component";
 import styles from "./styles.module.css";
 import cn from "classnames";

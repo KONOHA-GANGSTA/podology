@@ -1,10 +1,11 @@
 import { Layout } from "./components/layout/component";
+import { MainPage } from "./pages/MainPage/component";
 import "./styles.module.css";
 
 function App() {
   return (
     <Layout>
-      <div>keksi KEK</div>
+      <MainPage />
     </Layout>
   );
 }

@@ -1,4 +1,4 @@
-import { MenuBurger } from "../components/MenuBurger/component";
+import { MenuBurger } from "../MenuBurger/component";
 import styles from "./styles.module.css";
 
 export const MobileNavigationHeader = ({ opened, callback }) => {
