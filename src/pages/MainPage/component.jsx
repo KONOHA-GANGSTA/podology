@@ -46,7 +46,7 @@ export const MainPage = () => {
     });
   });
 
-  const observer = new IntersectionObserver(callback, { threshold: [0.1] });
+  const observer = new IntersectionObserver(callback);
   useEffect(() => {
     [section3, section4, section5, section6].forEach((el) => {
       observer.observe(el.current);
