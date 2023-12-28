@@ -2,10 +2,8 @@ import styles from "./styles.module.css";
 import MainImage from "../../pictures/photos/main.jpg";
 import MainImage2 from "../../pictures/photos/main2.JPG";
 import { useRef } from "react";
-import { useEffect } from "react";
-import { useCallback } from "react";
-import { useReducer } from "react";
 import cn from "classnames";
+import { useElementWasInView } from "../../hooks/useElementWasInView";
 
 export const MainPage = () => {
   const section3 = useRef();
@@ -13,45 +11,12 @@ export const MainPage = () => {
   const section5 = useRef();
   const section6 = useRef();
 
-  const reducer = useCallback((state, action) => {
-    switch (action.type.classList[0]) {
-      case styles.section3:
-        return { ...state, s3: true };
-      case styles.section4: {
-        return { ...state, s4: true };
-      }
-      case styles.section5: {
-        return { ...state, s5: true };
-      }
-      case styles.section6: {
-        return { ...state, s6: true };
-      }
-      default:
-        return state;
-    }
-  });
-
-  const [pageState, dispatch] = useReducer(reducer, {
-    s3: false,
-    s4: false,
-    s5: false,
-    s6: false,
-  });
-
-  const callback = useCallback((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.intersectionRatio) {
-        dispatch({ type: entry.target, payload: true });
-      }
-    });
-  });
-
-  const observer = new IntersectionObserver(callback);
-  useEffect(() => {
-    [section3, section4, section5, section6].forEach((el) => {
-      observer.observe(el.current);
-    });
-  }, []);
+  const pageState = useElementWasInView([
+    section3,
+    section4,
+    section5,
+    section6,
+  ]);
 
   return (
     <article>
@@ -82,7 +47,7 @@ export const MainPage = () => {
         </section>
         <section
           ref={section3}
-          className={cn(styles.section3, { [styles.hidden]: !pageState.s3 })}
+          className={cn(styles.section3, { [styles.hidden]: !pageState.s0 })}
         >
           <div>
             <h1>
@@ -116,7 +81,7 @@ export const MainPage = () => {
         </section>
         <section
           ref={section4}
-          className={cn(styles.section4, { [styles.hidden]: !pageState.s4 })}
+          className={cn(styles.section4, { [styles.hidden]: !pageState.s1 })}
         >
           <div className={styles.info}>
             <div>
@@ -135,7 +100,7 @@ export const MainPage = () => {
         </section>
         <section
           ref={section5}
-          className={cn(styles.section5, { [styles.hidden]: !pageState.s5 })}
+          className={cn(styles.section5, { [styles.hidden]: !pageState.s2 })}
         >
           <div>
             <h1>Обращайтесь к нам к нам</h1>
@@ -148,7 +113,7 @@ export const MainPage = () => {
         </section>
         <section
           ref={section6}
-          className={cn(styles.section6, { [styles.hidden]: !pageState.s6 })}
+          className={cn(styles.section6, { [styles.hidden]: !pageState.s3 })}
         >
           <div>
             <h1>

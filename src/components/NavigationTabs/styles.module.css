@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   transition: 0.5s;
-  z-index: 2;
+  z-index: 10;
 }
 
 .navigation {
@@ -34,7 +34,7 @@
 
 @media screen and (max-width: 650px) {
   .nav_container {
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 0;
     transform: translateX(+100%);
