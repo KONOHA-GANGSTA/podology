@@ -1,0 +1,27 @@
+.root {
+  width: 100%;
+}
+
+.root table {
+  width: 100%;
+}
+
+.root table caption {
+  background-color: var(--cgreen);
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  font-family: "Comfortaa";
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.root table th {
+  /* background-color: white; */
+  color: var(--cgreen);
+  font-size: 20px;
+}
+
+.root table > thead {
+  background-color: white;
+}
