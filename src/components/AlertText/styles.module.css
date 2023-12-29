@@ -1,0 +1,22 @@
+.root {
+  position: absolute;
+  top: 15px;
+  background-color: var(--cgreen);
+  color: white;
+  font-size: 24px;
+  font-family: "Comfortaa";
+  box-sizing: border-box;
+  padding: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 1;
+  border-radius: 15px;
+  transition: 5s;
+  z-index: 30;
+  text-align: center;
+  cursor: pointer;
+}
+
+.fading {
+  opacity: 0;
+}
