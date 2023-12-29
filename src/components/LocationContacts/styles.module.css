@@ -42,6 +42,6 @@
 
 .address_row > div a:hover {
   border-radius: 10px;
-  box-shadow: inset 0 0 0 2em var(--cgreen);
+  box-shadow: inset 0 0 0 4em var(--cgreen);
   color: white;
 }
