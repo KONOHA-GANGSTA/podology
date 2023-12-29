@@ -6,14 +6,14 @@ import { NotFoundPage } from "./pages/NotFoundPage/component";
 import { PricesPage } from "./pages/PricesPage/components";
 import { ServicesPage } from "./pages/ServicesPage/component";
 import "./styles.module.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Layout>
         <Routes>
-          <Route index path="podology/" element={<MainPage />} />
+          <Route index element={<MainPage />} />
           <Route path="podology/o_nas" element={<AboutUsPage />} />
           <Route path="podology/uslugi" element={<ServicesPage />} />
           <Route path="podology/ceny" element={<PricesPage />} />
@@ -21,7 +21,7 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Layout>
-    </BrowserRouter>
+    </Router>
   );
 }
 
