@@ -4,6 +4,8 @@ import MainImage2 from "../../pictures/photos/main2.JPG";
 import { useRef } from "react";
 import cn from "classnames";
 import { useElementWasInView } from "../../hooks/useElementWasInView";
+import { PAGES_ROUTES } from "../../constants/PAGES_ROUTES";
+import { Link } from "react-router-dom";
 
 export const MainPage = () => {
   const section3 = useRef();
@@ -40,7 +42,13 @@ export const MainPage = () => {
               <h1>Квалифицированный подолог</h1>
               <p>Оказание качественного профессионального ухода за стопой</p>
               <div className={styles.button_container}>
-                <button className={styles.button}>Записаться</button>
+                <Link
+                  to={PAGES_ROUTES["Контакты"].slice(
+                    PAGES_ROUTES["Главная"].length
+                  )}
+                >
+                  <button className={styles.button}>Записаться</button>
+                </Link>
               </div>
             </div>
           </div>
@@ -122,7 +130,13 @@ export const MainPage = () => {
               <span className={styles.green}> заслуживают!</span>
             </h1>
             <div className={styles.button_container}>
-              <button className={styles.button}>Записаться</button>
+              <Link
+                to={PAGES_ROUTES["Контакты"].slice(
+                  PAGES_ROUTES["Главная"].length
+                )}
+              >
+                <button className={styles.button}>Записаться</button>
+              </Link>
             </div>
           </div>
         </section>

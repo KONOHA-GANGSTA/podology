@@ -1,13 +1,5 @@
-.root {
-  font-size: 24px;
-  padding: 5px;
-  cursor: pointer;
-  border-radius: 10px;
-  transition: 0.75s;
-}
-
-.root:hover,
-.root:focus {
+.link:hover,
+.link:focus {
   box-shadow: inset 0 0 0 2em white;
   color: var(--cgreen);
 }
@@ -18,4 +10,24 @@
   border-radius: 0;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  transform: translateX(+20px);
+}
+
+.link {
+  text-decoration: none !important;
+  border-radius: 10px;
+  color: white;
+  font-size: 24px;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.75s;
+  text-decoration: none !important;
+}
+
+.active {
+  box-shadow: inset 0 0 0 2em white;
+  color: var(--cgreen) !important;
+  cursor: default;
+  text-decoration: none !important;
 }
