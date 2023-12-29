@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 import cn from "classnames";
 import { PAGES_ROUTES } from "../../constants/PAGES_ROUTES";
 
-export const NavigationTab = ({ title, className, opened }) => {
+export const NavigationTab = ({ title, className, opened, setOpened }) => {
   return (
     <NavLink
       to={"/" + PAGES_ROUTES[title]}
@@ -14,6 +14,7 @@ export const NavigationTab = ({ title, className, opened }) => {
           [styles.mobile]: opened,
         })
       }
+      onClick={() => setOpened(false)}
     >
       {title}
     </NavLink>

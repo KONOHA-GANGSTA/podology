@@ -28,6 +28,7 @@ export const Header = ({ className }) => {
         <NavigationTabs
           categories={PAGES_NAMES}
           opened={opened}
+          setOpened={setOpened}
           callback={() => setOpened((state) => !state)}
         />
       </header>
