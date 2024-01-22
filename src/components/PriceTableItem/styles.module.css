@@ -20,10 +20,11 @@
 }
 
 .row:hover {
-  box-shadow: inset 0 0 0 7em var(--cgreen);
+  box-shadow: inset 0 0 0 7em var(--cgreen) !important;
   color: white;
   font-weight: bold;
   cursor: pointer;
+  text-shadow: 0 0 1px var(--cgreen);
 }
 
 @media screen and (max-width: 650px) {

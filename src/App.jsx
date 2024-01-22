@@ -14,10 +14,10 @@ function App() {
       <Layout>
         <Routes>
           <Route index element={<MainPage />} />
-          <Route path="podology/o_nas" element={<AboutUsPage />} />
-          <Route path="podology/uslugi" element={<ServicesPage />} />
-          <Route path="podology/ceny" element={<PricesPage />} />
-          <Route path="podology/contacty" element={<ContactsPage />} />
+          <Route path="o_nas" element={<AboutUsPage />} />
+          <Route path="uslugi" element={<ServicesPage />} />
+          <Route path="ceny" element={<PricesPage />} />
+          <Route path="contacty" element={<ContactsPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Layout>

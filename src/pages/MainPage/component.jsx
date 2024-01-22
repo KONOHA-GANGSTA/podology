@@ -27,7 +27,7 @@ export const MainPage = () => {
           <div>
             <h1>
               Добро пожаловать в наш кабинет, где забота о{" "}
-              <span className={styles.green}>ваших</span> ногах —{" "}
+              <span className={styles.green}>ваших</span> стопах —{" "}
               <span className={styles.red}>наш</span> приоритет!
             </h1>
           </div>
@@ -111,7 +111,7 @@ export const MainPage = () => {
           className={cn(styles.section5, { [styles.hidden]: !pageState.s2 })}
         >
           <div>
-            <h1>Обращайтесь к нам к нам</h1>
+            <h1>Обращайтесь к нам</h1>
             <p>
               Насладитесь персонализированным подходом к вашим потребностям.Мы
               обеспечим вас не только профессиональным подходом к проблеме, но и
@@ -126,7 +126,7 @@ export const MainPage = () => {
           <div>
             <h1>
               Обратитесь к нам <span className={styles.red}>сегодня</span>, и
-              дарите своим ногам заботу, которую они
+              дарите своим стопам заботу, которую они
               <span className={styles.green}> заслуживают!</span>
             </h1>
             <div className={styles.button_container}>
