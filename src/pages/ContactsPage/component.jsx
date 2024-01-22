@@ -3,11 +3,12 @@ import { PhoneContacts } from "../../components/PhoneContacts/component";
 import { LocationContacts } from "../../components/LocationContacts/component";
 import { VKContacts } from "../../components/VKcontacts/component";
 import { useGetContactsQuery } from "../../redux/services/api";
+import { Spiner } from "../../components/Spiner/component";
 
 export const ContactsPage = () => {
   const { data, isFetching } = useGetContactsQuery();
 
-  if (isFetching) return <div>Грузим</div>;
+  if (isFetching) return <Spiner />;
 
   return (
     <div className={styles.root}>
