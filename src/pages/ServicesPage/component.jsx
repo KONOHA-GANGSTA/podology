@@ -1,12 +1,14 @@
 import { Service } from "../../components/Service/component";
-import { SERVICES } from "../../constants/services";
+import { useGetServicesQuery } from "../../redux/services/api";
 import styles from "./styles.module.css";
 
 export const ServicesPage = () => {
+  const { data, isFetching } = useGetServicesQuery();
+  if (isFetching) return <div>GRUZIM</div>;
   return (
     <div className={styles.root}>
       <div className={styles.services_container}>
-        {SERVICES.map((el, ind) => (
+        {data.map((el, ind) => (
           <Service service={el} key={ind} />
         ))}
       </div>

@@ -9,17 +9,7 @@ import { useRef } from "react";
 import { useElementWasInView } from "../../hooks/useElementWasInView";
 
 export const AboutUsPage = () => {
-  const targets = useRef();
-  const sterilRef = useRef();
-  const first_visit = useRef();
-  const conclusion = useRef();
-  const pageState = useElementWasInView([
-    targets,
-    sterilRef,
-    first_visit,
-    conclusion,
-  ]);
-
+  const { state, refs } = useElementWasInView(4);
 
   return (
     <article>
@@ -54,8 +44,8 @@ export const AboutUsPage = () => {
           </div>
         </div>
         <div
-          className={cn(styles.targets, { [styles.hidden]: !pageState.s0 })}
-          ref={targets}
+          className={cn(styles.targets, { [styles.hidden]: !state.s0 })}
+          ref={refs[0]}
         >
           <div className={styles.header}>
             <h1>Работаю со сложными стопами</h1>
@@ -72,8 +62,8 @@ export const AboutUsPage = () => {
           <div>При необходимости выезжаю на дом</div>
         </div>
         <div
-          className={cn(styles.steril, { [styles.hidden]: !pageState.s1 })}
-          ref={sterilRef}
+          className={cn(styles.steril, { [styles.hidden]: !state.s1 })}
+          ref={refs[1]}
         >
           <div className={styles.info}>
             В работе применяю профессиональную косметику. Инструменты и
@@ -86,8 +76,8 @@ export const AboutUsPage = () => {
           </div>
         </div>
         <div
-          className={cn(styles.first_visit, { [styles.hidden]: !pageState.s2 })}
-          ref={first_visit}
+          className={cn(styles.first_visit, { [styles.hidden]: !state.s2 })}
+          ref={refs[2]}
         >
           <div className={styles.svg}>
             <img src={idea} />
@@ -99,8 +89,8 @@ export const AboutUsPage = () => {
           </div>
         </div>
         <div
-          className={cn(styles.conclusion, { [styles.hidden]: !pageState.s3 })}
-          ref={conclusion}
+          className={cn(styles.conclusion, { [styles.hidden]: !state.s3 })}
+          ref={refs[3]}
         >
           В своей практике предпочитаю индивидуальный подход к каждому клиенту
         </div>

@@ -1,10 +1,13 @@
-import { useCallback, useEffect, useReducer } from "react";
+import { useCallback, useEffect, useReducer, useRef } from "react";
 
-export const useElementWasInView = (refs) => {
+export const useElementWasInView = (refsNum) => {
   const DEFAULT_PAGE_STATE = {};
-  refs.forEach((element, index) => {
-    DEFAULT_PAGE_STATE[`s${index}`] = false;
-  });
+  const refs = [];
+
+  for (let i = 0; i < refsNum; ++i) {
+    DEFAULT_PAGE_STATE[`s${i}`] = false;
+    refs.push(useRef());
+  }
 
   const reducer = useCallback((state, action) => {
     let index = 0;
@@ -34,5 +37,5 @@ export const useElementWasInView = (refs) => {
     });
   }, []);
 
-  return pageState;
+  return { state: pageState, refs: refs };
 };

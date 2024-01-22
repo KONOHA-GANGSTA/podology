@@ -1,24 +1,13 @@
 import styles from "./styles.module.css";
 import MainImage from "../../pictures/photos/main.jpg";
 import MainImage2 from "../../pictures/photos/main2.JPG";
-import { useRef } from "react";
 import cn from "classnames";
 import { useElementWasInView } from "../../hooks/useElementWasInView";
 import { PAGES_ROUTES } from "../../constants/PAGES_ROUTES";
 import { Link } from "react-router-dom";
 
 export const MainPage = () => {
-  const section3 = useRef();
-  const section4 = useRef();
-  const section5 = useRef();
-  const section6 = useRef();
-
-  const pageState = useElementWasInView([
-    section3,
-    section4,
-    section5,
-    section6,
-  ]);
+  const { state, refs } = useElementWasInView(4);
 
   return (
     <article>
@@ -54,8 +43,8 @@ export const MainPage = () => {
           </div>
         </section>
         <section
-          ref={section3}
-          className={cn(styles.section3, { [styles.hidden]: !pageState.s0 })}
+          ref={refs[0]}
+          className={cn(styles.section3, { [styles.hidden]: !state.s0 })}
         >
           <div>
             <h1>
@@ -88,8 +77,8 @@ export const MainPage = () => {
           </div>
         </section>
         <section
-          ref={section4}
-          className={cn(styles.section4, { [styles.hidden]: !pageState.s1 })}
+          ref={refs[1]}
+          className={cn(styles.section4, { [styles.hidden]: !state.s1 })}
         >
           <div className={styles.info}>
             <div>
@@ -107,8 +96,8 @@ export const MainPage = () => {
           </div>
         </section>
         <section
-          ref={section5}
-          className={cn(styles.section5, { [styles.hidden]: !pageState.s2 })}
+          ref={refs[2]}
+          className={cn(styles.section5, { [styles.hidden]: !state.s2 })}
         >
           <div>
             <h1>Обращайтесь к нам</h1>
@@ -120,8 +109,8 @@ export const MainPage = () => {
           </div>
         </section>
         <section
-          ref={section6}
-          className={cn(styles.section6, { [styles.hidden]: !pageState.s3 })}
+          ref={refs[3]}
+          className={cn(styles.section6, { [styles.hidden]: !state.s3 })}
         >
           <div>
             <h1>
